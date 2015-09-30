@@ -15,7 +15,7 @@ var errors = require('./errors');
  *
  * @constructor
  */
-function AdvanceConnectionManager(connection_interface)
+function AdvancedConnectionManager(connection_interface)
 {
 	if(typeof connection_interface !== 'object')
 	{
@@ -45,7 +45,7 @@ function AdvanceConnectionManager(connection_interface)
  * Can handle index argument as iteration number.
  * @returns {*|Promise} Promises/A+ object - promise for a connection.
  */
-AdvanceConnectionManager.prototype.connect = function connect(params, settings) {
+AdvancedConnectionManager.prototype.connect = function connect(params, settings) {
 
 	var self = this;
 
@@ -99,4 +99,4 @@ AdvanceConnectionManager.prototype.connect = function connect(params, settings) 
 		});
 };
 
-module.exports = AdvanceConnectionManager;
+module.exports = AdvancedConnectionManager;

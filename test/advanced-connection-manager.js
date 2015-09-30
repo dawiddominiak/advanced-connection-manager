@@ -3,7 +3,7 @@
 
 var expect = require('chai').expect;
 
-var AdvanceConnectionManager = require('./../index');
+var AdvancedConnectionManager = require('./../index');
 var errors = require('./../errors');
 var connection_interface_factory = require('./mock/test-connection-interface-factory');
 
@@ -29,7 +29,7 @@ describe('AdvanceConnectionManager', function() {
 				notify_callback_flag = true;
 			};
 
-			var test_connection = new AdvanceConnectionManager(connection_interface);
+			var test_connection = new AdvancedConnectionManager(connection_interface);
 
 			return test_connection.connect({}, {
 				notify_callback: notify_callback,
@@ -61,7 +61,7 @@ describe('AdvanceConnectionManager', function() {
 				notify_callback_counter++;
 			};
 
-			var test_connection = new AdvanceConnectionManager(connection_interface);
+			var test_connection = new AdvancedConnectionManager(connection_interface);
 
 			return test_connection.connect({}, {
 				notify_callback: notify_callback,
@@ -100,7 +100,7 @@ describe('AdvanceConnectionManager', function() {
 				notify_callback_counter++;
 			};
 
-			var test_connection = new AdvanceConnectionManager(connection_interface);
+			var test_connection = new AdvancedConnectionManager(connection_interface);
 
 			return test_connection.connect({}, {
 				notify_callback: notify_callback,
