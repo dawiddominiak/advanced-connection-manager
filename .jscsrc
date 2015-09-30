@@ -1,0 +1,26 @@
+{
+	"excludeFiles" : ["node_modules/**", ".git"],
+	"disallowMixedSpacesAndTabs": "smart",
+	"disallowMultipleLineStrings": true,
+	"disallowMultipleVarDecl": "exceptUndefined",
+	"disallowOperatorBeforeLineBreak": ["+", ".", "||", "&&", "-", "!", "/", "*", "%"],
+	"disallowTrailingWhitespace": true,
+	"maximumLineLength": 120,
+	"requireCommaBeforeLineBreak": true,
+	"requireCurlyBraces": true,
+	"requirePaddingNewlinesBeforeKeywords": [
+		"do",
+		"for",
+		"if",
+		"return",
+		"switch",
+		"throw",
+		"try",
+		"while"
+	],
+	"requireParenthesesAroundIIFE": true,
+	"requireSpaceBetweenArguments": true,
+	"requireTrailingComma": {"ignoreSingleValue": true, "ignoreSingleLine": true},
+	"validateIndentation": { "value": "\t" },
+	"validateLineBreaks": "LF"
+}

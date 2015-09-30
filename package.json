@@ -1,0 +1,29 @@
+{
+  "name": "advanced-connection-manager",
+  "version": "0.0.1",
+  "description": "Advanced connector manager.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpndata/advanced-connection-manager.git"
+  },
+  "keywords": [
+    "connection",
+    "manager"
+  ],
+  "author": "GPN DATA programmers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gpndata/advanced-connection-manager/issues"
+  },
+  "homepage": "https://github.com/gpndata/advanced-connection-manager#readme",
+  "dependencies": {
+    "when": "^3.7.3"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0"
+  }
+}
