@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = {
 	prepare: function(response_factory) {
 

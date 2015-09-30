@@ -1,3 +1,5 @@
+'use strict';
+
 var when = require('when');
 var whenNode = require('when/node');
 var errors = require('./errors');
@@ -18,13 +20,13 @@ function AdvanceConnectionManager(connection_interface)
 	if(typeof connection_interface !== 'object')
 	{
 
-		throw new errors.SyntaxError('There is no interface in constructor param or interface is not an object.');
+		throw new errors.ISyntaxError('There is no interface in constructor param or interface is not an object.');
 	}
 
 	if(typeof connection_interface.connect !== 'function')
 	{
 
-			throw new errors.SyntaxError('Given interface has no method connect.')
+		throw new errors.ISyntaxError('Given interface has no method connect.');
 	}
 
 	this.connection = null;
@@ -53,8 +55,8 @@ AdvanceConnectionManager.prototype.connect = function connect(params, settings) 
 	settings.max_attempts = settings.max_attempts || 3;
 	settings.time_span_factory = settings.time_span_factory || function(i) {
 
-			return 5*i*i*i;
-		};
+		return 5*i*i*i;
+	};
 
 	return when.iterate(function(x) {
 
@@ -82,13 +84,15 @@ AdvanceConnectionManager.prototype.connect = function connect(params, settings) 
 					})
 					.catch(function(error) {
 						settings.notify_callback(error);
-					})
-			})
+					});
+			});
 	}, 0)
 		.then(function() {
 			if(!self.connection) {
 
-				throw new errors.ConnectionRefusedError('Connection refused despite ' + settings.max_attempts + ' attempts to connect.');
+				throw new errors.ConnectionRefusedError(
+					'Connection refused despite ' + settings.max_attempts + ' attempts to connect.'
+				);
 			}
 
 			return self.connection;

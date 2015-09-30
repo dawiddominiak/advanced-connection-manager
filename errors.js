@@ -1,7 +1,9 @@
+'use strict';
+
 var IntermediateInheritor = function() {};
 IntermediateInheritor.prototype = Error.prototype;
 
-function SyntaxError() {
+function ISyntaxError() {
 	var tmp = Error.apply(this, arguments);
 	tmp.name = this.name = 'SyntaxError';
 
@@ -15,7 +17,7 @@ function SyntaxError() {
 	return this;
 }
 
-SyntaxError.prototype = new IntermediateInheritor();
+ISyntaxError.prototype = new IntermediateInheritor();
 
 function ConnectionRefusedError() {
 	var tmp = Error.apply(this, arguments);
@@ -34,6 +36,6 @@ function ConnectionRefusedError() {
 ConnectionRefusedError.prototype = new IntermediateInheritor();
 
 module.exports = {
-	SyntaxError: SyntaxError,
+	ISyntaxError: ISyntaxError,
 	ConnectionRefusedError: ConnectionRefusedError,
 };
