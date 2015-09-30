@@ -1,6 +1,6 @@
 {
   "name": "advanced-connection-manager",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Advanced connector manager.",
   "main": "index.js",
   "scripts": {
